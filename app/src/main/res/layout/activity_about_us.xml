@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back"
+    android:orientation="vertical"
+    tools:context=".about_us"
+    android:layout_centerHorizontal="true"
+    >
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/white"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/toolbar3_icon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/back_b" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:id="@+id/con_toolbar3_image"
+                android:layout_centerHorizontal="true"
+                android:layout_toRightOf="@id/toolbar2_icon"
+                android:src="@drawable/logo_new" />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Welcome To First Step "
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="#FF3361"
+        android:id="@+id/w_about_us"
+        android:layout_below="@+id/toolbar3"/>
+
+    <TextView
+        android:id="@+id/pre_about_us"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/w_about_us"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-8dp"
+        android:text="Pre School and Day Care"
+        android:textColor="#00ECFF"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/about_us_text"
+        android:textColor="#000000"
+        android:layout_below="@+id/pre_about_us"
+        android:autoSizeTextType="uniform"
+        android:autoSizeStepGranularity="1dp"
+        android:text="First Step Preschool is high scope inspired childhood learning program for bright, happy children engaged in meaningful learning activities as they become independent thinkers.\n\n
+We believe that each child is a unique individual and that all children can learn. Our programs provide environment that recognize children’s varied abilities, interests, needs, and learning styles.\n\n
+We believe children learn best through meaningful play. Our educational-based, child centred program reflects the integration of physical, cognitive, social, emotional, language, self-help and aesthetic areas for the total development of the child. Meaningful play encourages curiosity, discovery and problem solving which allows individual growth and development of a positive self-image.\n\n
+We recognize that parents are the child’s first teachers. Children learn best when parents are involved in their educational program. The primary bridge between home and school is the involvement of family and community.\n\n"/>
+
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/bottom_bg2"/>
+</RelativeLayout>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/notifications"
+            android:icon="@drawable/noti_icon"
+            android:title="Notifications" />
+        <item
+            android:id="@+id/school_programs"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="School Programs" />
+        <item
+            android:id="@+id/fee_structure"
+            android:icon="@drawable/fees"
+            android:title="Fees Structure" />
+        <item
+            android:id="@+id/curriculum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/academics"
+            android:title="Academics And Curriculum" />
+        <item
+            android:id="@+id/school_events"
+            android:icon="@drawable/events"
+            android:title="School Events" />
+        <item
+            android:id="@+id/gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Gallery" />
+
+        <item
+            android:id="@+id/about_us"
+            android:icon="@drawable/about_us"
+            android:title="About Us" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/website"
+                android:icon="@drawable/website"
+                android:title="Visit Our Website" />
+            <item
+                android:id="@+id/fb_page"
+                android:icon="@drawable/fb_page"
+                android:title="Like Our Page" />
+            <item
+                android:id="@+id/contact_us"
+                android:icon="@drawable/contacts"
+                android:title="Contact Us" />
+            <item
+                android:id="@+id/reach_us"
+                android:icon="@drawable/maps"
+                android:title="Reach Us "/>
+        </menu>
+    </item>
+
+</menu>

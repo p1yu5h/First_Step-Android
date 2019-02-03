@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Tab1"
+
+    android:background="@drawable/home_bg">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFCC00"
+            android:clipChildren="false">
+
+
+            <RelativeLayout
+                android:id="@+id/notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="48dp"
+                android:paddingTop="36dp"
+                android:paddingEnd="48dp"
+                android:paddingBottom="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/notification_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/notification_button"
+                        android:clickable="true"
+                        android:foreground="@drawable/ripple_effect"
+                        android:text="Notifications"
+                        android:textAllCaps="false"
+                        android:textColor="#FFF"
+                        android:textSize="24sp" />
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/notification_badge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/button"
+                    android:src="@drawable/notification_badge"
+                    android:textColor="#FFF" />
+
+            </RelativeLayout>
+
+
+            <ImageView
+                android:id="@+id/giraffe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/notification"
+                android:layout_marginTop="-40dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/giraffe_line" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+          <android.support.v7.widget.RecyclerView
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:id="@+id/grid_view_1"
+                >
+
+          </android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>
