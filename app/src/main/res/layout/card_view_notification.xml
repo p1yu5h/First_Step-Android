@@ -32,6 +32,7 @@
                 android:text="Aaaaaaaaaaaaaaa"
                 android:textSize="20dp"
                 android:textStyle="bold"
+                android:textColor="#FFF"
                 />
             </LinearLayout>
             <TextView
@@ -42,7 +43,8 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="12dp"
                 android:text="Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa..."
-                android:textSize="16dp" />
+                android:textSize="16dp"
+                android:textColor="#000"/>
 
 
             <TextView

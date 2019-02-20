@@ -42,7 +42,7 @@ public class transparent_activity extends Activity {
                 clickable=4;
                 break;
             case 4:val=new String[]{"Guitar","Singing","Violin","Piano","Dance","Drum","Theater","Chess","Vocab And Language","Abacus","Kids Aerobics","Robotics"};
-                topic.setText("Thythm And Blues");
+                topic.setText("Rhythm And Blues");
                 clickable=0;
                 break;
             case 5:val=new String[]{"Communication","Gross Motor","Fine Motor","Cognitive","Sensory","Social","Logical Reasoning","Balance","Imagination","Thinking And Problem Solving","Academic","Confidence"};

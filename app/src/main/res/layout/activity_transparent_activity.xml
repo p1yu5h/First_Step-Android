@@ -19,31 +19,31 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="700dp"
-                android:src="@drawable/fe1" />
+                android:layout_height="wrap_content"
+                android:src="@drawable/fe1"/>
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="700dp"
+                android:layout_height="wrap_content"
                 android:src="@drawable/fe2" />
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="700dp"
+                android:layout_height="wrap_content"
                 android:src="@drawable/fe3" />
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="700dp"
+                android:layout_height="wrap_content"
                 android:src="@drawable/fe4" />
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="700dp"
-                android:src="@drawable/fe5" />
+                android:layout_height="wrap_content"
+                android:src="@drawable/fe5"/>
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="700dp"
-                android:src="@drawable/fe6" />
+                android:layout_height="wrap_content"
+                android:src="@drawable/fe6"/>
 
         </LinearLayout>
     </ScrollView>
