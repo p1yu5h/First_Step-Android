@@ -1,4 +1,4 @@
-package com.firststep.www.firststep;
+package com.firststep.www;
 
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;

@@ -1,4 +1,4 @@
-package com.firststep.www.firststep;
+package com.firststep.www;
 
 
 import android.content.Context;
@@ -11,6 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.firststep.www.R;
+
 import java.util.Random;
 public class card_adapter2 extends RecyclerView.Adapter<card_adapter2.RecyclerVH> {
     private Context mcontext;

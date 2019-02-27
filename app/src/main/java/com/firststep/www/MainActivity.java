@@ -1,4 +1,4 @@
-package com.firststep.www.firststep;
+package com.firststep.www;
 
 import android.content.Context;
 import android.content.ContextWrapper;
@@ -30,6 +30,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.Volley;
+import com.firststep.www.R;
 
 import java.io.File;
 import java.io.FileOutputStream;

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/back"
     android:orientation="vertical"
-    tools:context=".Contact_Us"
+    tools:context="com.firststep.www.Contact_Us"
     android:layout_centerHorizontal="true"
     >
 

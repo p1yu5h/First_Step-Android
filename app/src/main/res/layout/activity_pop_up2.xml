@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PopUp2"
+    tools:context="com.firststep.www.PopUp2"
     android:orientation="vertical">
     <ImageView
         android:padding="8dp"

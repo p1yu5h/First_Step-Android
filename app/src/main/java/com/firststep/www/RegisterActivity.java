@@ -1,5 +1,6 @@
-package com.firststep.www.firststep;
+package com.firststep.www;
 
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemSelectedListener;
 
@@ -22,6 +24,13 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.firststep.www.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,9 +41,12 @@ import static android.widget.Toast.makeText;
 
 public class RegisterActivity extends AppCompatActivity implements OnItemSelectedListener {
 
-    EditText parentName, studentName, emailId, mobileNumber;
+    EditText parentName, studentName, emailId, mobileNumber, password;
     Button registerButton;
     String center;
+    TextView emailVerifiedText;
+
+    private FirebaseAuth mAuth;
 
     final String url = "http://192.168.1.102:8080/adduser";
 
@@ -50,14 +62,49 @@ public class RegisterActivity extends AppCompatActivity implements OnItemSelecte
         emailId = findViewById(R.id.email_id);
         mobileNumber = findViewById(R.id.mobile_number);
         registerButton = findViewById(R.id.register_button);
+        password = findViewById(R.id.password);
+
+        mAuth = FirebaseAuth.getInstance();
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendDataToServer(url, studentName.getText().toString(),
+           /*     sendDataToServer(url, studentName.getText().toString(),
                         parentName.getText().toString(),
                         emailId.getText().toString(),
-                        mobileNumber.getText().toString(), center);
+                        mobileNumber.getText().toString(), center);*/
+
+
+                mAuth.createUserWithEmailAndPassword(emailId.getText().toString(), password.getText().toString())
+                        .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    // Sign in success, update UI with the signed-in user's information
+                                    Log.d("piyush", "createUserWithEmail:success");
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    if(user!=null){
+                                        user.sendEmailVerification()
+                                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                        @Override
+                                                        public void onComplete(@NonNull Task<Void> task) {
+                                                            if (task.isSuccessful()) {
+                                                                Log.d("piyushhhh", "Email sent.");
+                                                            }
+                                                        }
+                                                    });
+                                        }
+                                    updateUI(user,false);
+                                } else {
+                                    // If sign in fails, display a message to the user.
+                                    Log.w("satija", "createUserWithEmail:failure", task.getException());
+                                    Toast.makeText(RegisterActivity.this, "Authentication failed.",
+                                            Toast.LENGTH_SHORT).show();
+                                }
+
+                                // ...
+                            }
+                        });
             }
         });
 
@@ -137,6 +184,8 @@ public class RegisterActivity extends AppCompatActivity implements OnItemSelecte
         }
     }
 
+
+
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         center = parent.getItemAtPosition(position).toString();
@@ -145,5 +194,36 @@ public class RegisterActivity extends AppCompatActivity implements OnItemSelecte
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+
+
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser!=null) {
+            currentUser.reload().addOnSuccessListener(new OnSuccessListener<Void>() {
+                @Override
+                public void onSuccess(Void aVoid) {
+                    FirebaseUser user = mAuth.getCurrentUser();
+                    updateUI(user,user.isEmailVerified());
+                }
+            });
+        }
+    }
+
+    public void updateUI(FirebaseUser user, boolean emailVerified){
+
+            try {
+                setContentView(R.layout.email_verified_landing_page);
+
+                emailVerifiedText = findViewById(R.id.email_verified_textview);
+                emailVerifiedText.setText(emailVerified ? "Thank You for verifying you email" : "Please verify your email");
+                Log.d("bhaiiiiiiii", String.valueOf(user.isEmailVerified()));
+            }catch (NullPointerException e){
+                Toast.makeText(RegisterActivity.this, "User is null", Toast.LENGTH_LONG).show();
+            }
     }
 }

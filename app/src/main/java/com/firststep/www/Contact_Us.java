@@ -1,10 +1,12 @@
-package com.firststep.www.firststep;
+package com.firststep.www;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.firststep.www.R;
 
 public class Contact_Us extends AppCompatActivity {
 

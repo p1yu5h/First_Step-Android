@@ -1,9 +1,11 @@
-package com.firststep.www.firststep;
+package com.firststep.www;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.firststep.www.R;
 
 public class about_us extends AppCompatActivity {
 

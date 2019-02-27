@@ -1,4 +1,4 @@
-package com.firststep.www.firststep;
+package com.firststep.www;
 
 
 import android.content.Context;
@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.firststep.www.R;
 
 import java.io.File;
 import java.io.FileInputStream;

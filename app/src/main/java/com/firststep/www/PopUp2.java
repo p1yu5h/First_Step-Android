@@ -1,4 +1,4 @@
-package com.firststep.www.firststep;
+package com.firststep.www;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -7,6 +7,8 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.firststep.www.R;
 
 import java.util.Random;
 

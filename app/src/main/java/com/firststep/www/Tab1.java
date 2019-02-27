@@ -1,4 +1,4 @@
-package com.firststep.www.firststep;
+package com.firststep.www;
 
 import android.content.Context;
 import android.net.Uri;
@@ -10,42 +10,30 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.firststep.www.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Tab3.OnFragmentInteractionListener} interface
+ * {@link Tab1.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Tab3#newInstance} factory method to
+ * Use the {@link Tab1#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Tab3 extends Fragment {
+public class Tab1 extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
+    public Customadapter customadapter;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    String[] values = new String[]{"option1", "option2","option1", "option2","option1", "option2","option1", "option2","option1", "option2"};
-
-    int[] imageId = {
-            R.drawable.image1,
-            R.drawable.image2,
-            R.drawable.image3,
-            R.drawable.image4,
-            R.drawable.image5,
-            R.drawable.image6,
-            R.drawable.image7,
-            R.drawable.image8,
-            R.drawable.image9,
-            R.drawable.image10
-    };
-
+    RecyclerView gridView;
     private OnFragmentInteractionListener mListener;
 
-    public Tab3() {
+    public Tab1() {
         // Required empty public constructor
     }
 
@@ -55,11 +43,11 @@ public class Tab3 extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Tab3.
+     * @return A new instance of fragment Tab1.
      */
     // TODO: Rename and change types and number of parameters
-    public static Tab3 newInstance(String param1, String param2) {
-        Tab3 fragment = new Tab3();
+    public static Tab1 newInstance(String param1, String param2) {
+        Tab1 fragment = new Tab1();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -80,13 +68,25 @@ public class Tab3 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v= inflater.inflate(R.layout.fragment_tab3, container, false);
-        RecyclerView gridView;
+
+        String[] values = new String[]{"Our Programs", "Curriculum","Events", "Fee Structure","Rhythm n Blues", "Psychological Tools"};
+        int[] imageId = {
+                R.drawable.bg17,
+                R.drawable.bg18,
+                R.drawable.bg19,
+                R.drawable.bg20,
+                R.drawable.bg17,
+                R.drawable.img2
+
+        };
+
         RecyclerView.LayoutManager layoutManager=new GridLayoutManager(getContext(),2);
-        gridView = (RecyclerView) v.findViewById(R.id.grid_view_3);
+        View v= inflater.inflate(R.layout.fragment_tab1, container, false);
+        gridView = (RecyclerView) v.findViewById(R.id.grid_view_1);
+        customadapter = new Customadapter(getActivity(),R.layout.item,1,values, imageId);
         gridView.setLayoutManager(layoutManager);
-        final Customadapter customadapter = new Customadapter(getActivity(),R.layout.image_card,3,values, imageId);
         gridView.setAdapter(customadapter);
+
         return v;
     }
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.firststep.www.firststep">
+    package="com.firststep.www">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -22,34 +22,36 @@
             android:required="false" />
 
         <activity
-            android:name=".RegisterActivity"
+            android:name="com.firststep.www.RegisterActivity"
 
             android:theme="@style/AppTheme.NoActionBar">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-        </activity>
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+
 
         </activity>
         <activity
-            android:name=".Contact_Us"
+            android:name="com.firststep.www.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+
+
+        </activity>
+        <activity
+            android:name="com.firststep.www.Contact_Us"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".transparent_activity"
+            android:name="com.firststep.www.transparent_activity"
             android:theme="@style/Theme.Transparent" />
         <activity
-            android:name=".PopUp2"
+            android:name="com.firststep.www.PopUp2"
             android:theme="@style/Theme.Transparent2" />
         <activity
-            android:name=".about_us"
+            android:name="com.firststep.www.about_us"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 

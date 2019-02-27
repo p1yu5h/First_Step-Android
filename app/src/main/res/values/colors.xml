@@ -22,4 +22,6 @@
     <color name="c3">#F36E27</color>
     <color name="c4">#ED1683</color>
 
+    <color name="transparent">#00000000</color>
+    <color name="blueHighlight">#404C86</color>
 </resources>

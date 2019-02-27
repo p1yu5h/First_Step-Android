@@ -1,4 +1,4 @@
-package com.firststep.www.firststep;
+package com.firststep.www;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,6 +8,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ScrollView;
 import android.widget.TextView;
+
+import com.firststep.www.R;
 
 public class transparent_activity extends Activity {
 
